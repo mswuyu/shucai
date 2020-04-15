@@ -1,0 +1,687 @@
+手机打开QQ咨询
+<a href="mqqwpa://im/chat?chat_type=wpa&uin=0000000000&version=1&src_type=web&web_src=bjhuli.com">手机端</a>
+<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=000000000&site=江右艺术高中&menu=yes">网页发起临时会话</a>
+                         tencent://message/?uin=0000000000&Site=我是中文&Menu=yes
+---------------
+-moz-（火狐）
+-ms-（IE）
+-webkit-（谷歌-360）
+-o-（opera）
+---------------
+地图a链接
+http://api.map.baidu.com/geocoder?address=江西省南昌市青山湖区北京东路2号&output=html&src=yourCompanyName|yourAppName
+---------------
+外发光
+-webkit-box-shadow: 0 0 10px #ebecf2;
+-moz-box-shadow: 0 0 10px #ebecf2;
+box-shadow: 0 0 10px #ebecf2;
+水平位置-垂直位置-模糊半径
+-------------------------
+空格
+&nbsp;
+-------------------------
+0px 阴影向右偏移量，为0
+10px 阴影向下偏移量，为10px
+5px 阴影的过渡距离，为5px
+---------------
+如何添加QQ咨询
+<a href="http://wpa.qq.com/msgrd?v=3&uin=491593166&site=qq&menu=yes">++++图或者文字+++++</a>
+-----------文字类-------------
+color:--------------（字体颜色）
+font-size: 12px;----（字体大小）
+font-family: "宋体";（字体）
+font-weight:bold;---（文字加粗）
+line-height:----------(行高)
+text-align:center;--（文字居中）
+text-indent:2em;-----（首行缩进）
+text-decoration:underline;---(添加下划线'下划线颜色和文字一样)
+text-align:right;-----(文字右对齐)
+writing-mode:tb-rl；---（文字竖向排版）
+letter-spacing:8px;----(文字间距)
+text-align: justify;---（字体排版美化）
+font-style:italic;------（倾斜）
+-----邮箱------
+<a href="mailto:2222222222@qq.com">Email</a>
+----------------------------
+H5插入视频
+    <video controls="" poster="images/sy-c4.jpg" width="100%">
+      <source src="images/1234.mp4" type="video/mp4" width="100%">
+    </video>
+----------------------------
+图片文字居中
+vertical-align:text-bottom;
+vertical-align:middle;
+----------------------------
+表格
+<td align="right" valign="top">表头01</td>
+
+跨行合并：rowspan     竖      如：rowspan = " 2 "
+跨列合并：colspan     横      如：colspan = " 3 "
+
+表格内容撑开长度
+white-space: nowrap
+
+表格不被撑开
+table { table-layout:fixed; word-break: break-all; word-wrap: break-word;}
+----------------------------
+文字两段对齐     文字平铺
+text-justify:distribute-all-lines;/*ie6-8*/
+text-align-last:justify;/* ie9*/
+-moz-text-align-last:justify;/*ff*/
+-webkit-text-align-last:justify;/*chrome 20+*/
+----------------------------
+文本框文字颜色
+::-webkit-input-placeholder { /* WebKit browsers */
+    color:#b6d40f;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:#b6d40f;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:#b6d40f;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color:#b6d40f;
+}
+----------------------------
+提交表单
+<form>
+<input type="text" placeholder="请输入文字"/>
+</form>
+<input type="submit" value="提交">
+---------------------------
+文本框点击变色、文本框伪类
+:focus
+伪类(伪类是行级元素，用伪类时需要加上下面语法)
+::before
+::after
+
+::after{content: "";}
+---------------------------
+去除浏览器默认文本框点击选取
+outline: none;
+---------------------------
+禁止复制，划词划字
+moz-user-select: -moz-none;
+-moz-user-select: none;
+-o-user-select:none;
+-khtml-user-select:none;
+-webkit-user-select:none;
+-ms-user-select:none;
+user-select:none;
+---------------------------
+乐语苹果显示太小--初始缩放比例1.0
+<meta name="viewport" content="width=device-width,initial-scale=1">
+禁止苹果识别电话
+<meta name="format-detection" content="telephone=no" />
+---------------------------
+平分
+display: -webkit-box;display: -webkit-flex;display: flex;
+
+-webkit-flex:1;flex:1;-webkit-box-flex:1;
+---------------------------
+清除浮动
+.clear{clear:both;}
+----------------------------
+让a失去刷新属性
+javascript:void(0);
+----------------------------
+背景透明背景
+background-color: rgba(0, 0, 0, 0.6);
+rgba 中的最后一个参数 0.4 就是想要的透明度，范围在0～1之间。
+
+在 ie 中一般是这样的：
+[css] 
+background-color: rgb(0, 0, 0); 
+filter: alpha(opacity=40); 
+opacity 表示透明度，它的值范围在 0～100 之间
+
+filter:alpha(opacity=50); /* IE */  
+-moz-opacity:0.5; /* 老版Mozilla */  
+-khtml-opacity:0.5; /* 老版Safari */  
+opacity: 0.5; /* 支持opacity的浏览器*/   
+
+filter:alpha(opacity=0);-moz-opacity:0;-khtml-opacity:0;opacity: 0;
+-----------------------------
+背景发光？
+box-shadow:1px 1px 12px rgba(200, 200, 200, 1)
+----------------------------
+自动旋转
+.innovation_a1_yuan{
+	transform:rotate(0deg);
+	-ms-transform:rotate(0deg);
+	-webkit-transform:rotate(0deg);
+	transition:all 1s linear;
+	/**规定需要绑定到选择器的 keyframe 名称**/
+	animation:innovation_a1_yuan 1s infinite;
+	-webkit-animation:innovation_a1_yuan 1s infinite; /* Safari 和 Chrome */
+	/**规定完成动画所花费的时间，以秒或毫秒计**/
+	animation-duration:50s;
+	-webkit-animation-duration:50s; /* Safari 和 Chrome */
+	/*动画曲线*/
+	animation-timing-function:linear;
+	-webkit-animation-timing-function:linear; /* Safari and Chrome */
+	/*动画播放次数*/
+	animation-iteration-count:infinite;
+	-webkit-animation-iteration-count:infinite; /*Safari and Chrome*/
+}
+@keyframes innovation_a1_yuan {
+      0% {
+		transform:rotate(0deg);
+		-ms-transform:rotate(0deg);
+		-webkit-transform:rotate(0deg);
+      }
+      100% {
+		transform:rotate(360deg);
+		-ms-transform:rotate(360deg);
+		-webkit-transform:rotate(360deg);
+      }
+}
+--------------文字上下居中--------------
+text-align:center;display:table-cell;vertical-align:middle;
+----------------------------
+手机a链接a功能
+<a href="tel:400-000-0000">拨打电话<a>
+<a href="sms:19956321564">发送短信<a>
+<a href="mailto:mail@mail.com">发送邮件<a>
+----------------------------
+框架
+<iframe width=100% height=600 name=frame frameborder=0 src="111.html" scrolling="auto"></iframe>
+----------------------------
+不同宽度
+@media screen and (max-width:1100px){.aaa{width:80px;}}
+----------------------------
+ico
+<link href="/favicon.ico" rel="shortcut icon">
+----------------------------
+翻页样式
+<style>
+.pagination{margin:40px 0 130px;text-align: center;font-size: 14px;color: #323232;line-height: 40px;}
+.pagination li{display: inline-block;height: 30px;text-align: center;line-height: 30px;font-size: 14px;color: #666666;margin: 0 2px;overflow: hidden;background: #ededed;}
+.pagination li a,.pagination li span{display: block;padding:0 12px;}
+.pagination li span{cursor: not-allowed;}
+.pagination a:hover,.pagination .active span{color: #fff;background: #129955;}
+</style>
+<!-- 翻页 -->
+<ul class="pagination">
+	<li class="disabled"><span>&lt;</span></li>
+	<li class="active"><span>1</span></li>
+	<li><a href="">2</a></li>
+	<li><a href="">&gt;</a></li>
+</ul>
+-------------------
+文字两端对齐
+text-align: justify;text-align-last:justify;
+小程序没用加上个伪类设为inline-block
+宽度100%
+-------------------
+字体英文
+黑体：SimHei
+宋体：SimSun
+新宋体：NSimSun
+仿宋：FangSong
+楷体：KaiTi
+仿宋_GB2312：FangSong_GB2312
+楷体_GB2312：KaiTi_GB2312  
+微软雅黑体：Microsoft YaHei
+-------------------
+插入视频
+<video width="958px" height="450px" controls="controls">  
+    <source src="images/1234.mp4" type="video/mp4" ></source>  
+</video>
+-------------------
+单选
+<input type="radio" id="male" name="sex" checked="checked" /><label for="male">男</label>
+<input type="radio" id="female" name="sex" /><label for="female">女</label>
+多选
+<label><input name="Fruit" type="checkbox" value="" />下次自动登录</label>
+-------------------
+手机单选美化
+<label class="radio"><input type="radio" name="1" /><span></span>咨询</label>
+<label class="radio"><input type="radio" name="1" /><span></span>投诉</label>
+
+.radio{ float:left; display:block; position:relative; padding-left:.416rem; margin-right:.48rem;}
+.radio input{ display:none;}
+.radio span{ display:block; width:.272rem; height:.272rem; border:1px solid #d6d6d6; border-radius:50%; position:absolute; left:0;top:50%; margin-top:-.136rem;}
+.radio input:checked+span{ border-color:#009848}
+.radio input:checked+span:after{ content:""; width:100%; height:100%; border-radius:50%; background:#009848; display:block; position:absolute;left: 0;top: 0}
+----------------------------
+旋转
+transform:rotate(7deg);
+-ms-transform:rotate(7deg); 	/* IE 9 */
+-moz-transform:rotate(7deg); 	/* Firefox */
+-webkit-transform:rotate(7deg); /* Safari 和 Chrome */
+-o-transform:rotate(7deg); 	/* Opera */
+----------------------------
+打印
+@media print{
+ 
+    .aaa{display:none;}
+
+}
+/******鼠标移动上去提示信息******/
+<div title="简介"> 
+----------------------------
+横向滚动--横向滚动条
+http://www.w3school.com.cn/tags/att_td_nowrap.asp
+----------------------------
+选中第几个
+:nth-child(1)
+----------------------------
+选中最后一个
+:last-child
+----------------------------
+倒数第几
+:nth-last-child(1)
+----------------------------
+渐变
+background: -webkit-linear-gradient(right, #34d9db, #227dff); /* Safari 5.1 - 6.0 */
+background: -o-linear-gradient(right, #34d9db, #227dff); /* Opera 11.1 - 12.0 */
+background: -moz-linear-gradient(right, #34d9db, #227dff); /* Firefox 3.6 - 15 */
+background: linear-gradient(to right, #34d9db, #227dff); /* 标准的语法 */
+----------------------------
+内边距失效-padding
+box-sizing:border-box;
+-moz-box-sizing:border-box; /* Firefox */
+-webkit-box-sizing:border-box; /* Safari */
+----------------------------
+设置边框 边框单独设置法
+border: solid #CCC;《《《这里设置边框颜色《《《
+border-width:1px 0px;《《这里设置没条边框大小《《
+>>>>>dashed<<<<<<
+dashed
+定义为虚线
+----------------------------
+div内内容居中  div内容居中
+<div align="center">133213132</div>
+----------------------------
+垂直对其一张图片《图片后面的文字上下居中对齐》
+img{ vertical-align:middle;} 
+----------------------------
+背景图片
+background:url(xxxx.jpg)
+-------与背景图片一起使用的参数-----------
+no-repeat;----背景图像不平铺
+repeat:平铺
+repeat-x:横向平铺
+repeat-y:纵向平铺 
+---------------------------
+背景居中
+    background-image: url(../images/bac_log_bj.jpg);
+    background-size: cover;
+    background-position: center center;
+----------------------------
+新建窗口打开网页代码
+<a href="http://www.yunduancn.com/" target="_blank">云端科技</a>
+<a href="http://beian.miit.gov.cn/" target="_blank">赣ICP备20000632号 </a>
+------------------------
+<可见性>visibility:
+Default——选择该选项，则不指明层的可见性。 
+Inherit——选择该选项，可以继承父层的可见性。 
+Visible——选择该选项， 可以显示层及其包含的内容，无论其父级层是否可见。 
+Hidden——选择该选项，可以隐藏层及其包含的内容，无论其父级层是否可见
+----------------------------
+电脑站访问手机站
+<style>
+<style type="text/css">
+body{min-width:1100px;}
+</style>
+</style>
+----------------------------
+背景固定
+bgProperties=fixed；
+-----------------------------
+背景图片居左显示且距离XX像素
+background:#f3f3f3 url(../images/top-b.jpg) center right 0.6rem no-repeat;
+-----------------------------
+鼠标效果-cursor
+url 	
+
+需使用的自定义光标的 URL。
+注释：请在此列表的末端始终定义一种普通的光标，以防没有由 URL 定义的可用光标。
+default 	默认光标（通常是一个箭头）
+auto 	默认。浏览器设置的光标。
+crosshair 	光标呈现为十字线。
+pointer 	光标呈现为指示链接的指针（一只手）
+move 	        此光标指示某对象可被移动。
+e-resize 	此光标指示矩形框的边缘可被向右（东）移动。
+ne-resize 	此光标指示矩形框的边缘可被向上及向右移动（北/东）。
+nw-resize 	此光标指示矩形框的边缘可被向上及向左移动（北/西）。
+n-resize 	此光标指示矩形框的边缘可被向上（北）移动。
+se-resize 	此光标指示矩形框的边缘可被向下及向右移动（南/东）。
+sw-resize 	此光标指示矩形框的边缘可被向下及向左移动（南/西）。
+s-resize 	此光标指示矩形框的边缘可被向下移动（南）。
+w-resize 	此光标指示矩形框的边缘可被向左移动（西）。
+text 	此光标指示文本。
+wait 	此光标指示程序正忙（通常是一只表或沙漏）。
+help 	此光标指示可用的帮助（通常是一个问号或一个气球）。
+-------------------------------
+锚链接
+<a name="锚点的名字"></a>----------------被锚点
+
+<a href="#锚点的名字">显示的字样</a>-----锚#
+-------------------------------
+font: normal 14px/24px Microsoft Yahei;
+文字缩写：加粗-大小-行高-字体
+-------------------------------
+清除内边距影响<内边距不显示>
+box-sizing:border-box;
+-------------------------------
+变换延时-背景变换延时---动画--过度
+transition:background-color .5s;
+transition:all .2s ease-in-out;
+变换渐变-变换效果
+-webkit-transition:all 0.3s ease 0s;
+-moz-transition: all 0.3s ease 0s;
+-o-transition: all 0.3s ease 0s;
+transition: all 0.3s ease 0s;
+
+-webkit-transition:all 0.3s ease 0s;-moz-transition: all 0.3s ease 0s;-o-transition: all 0.3s ease 0s;transition: all 0.3s ease 0s;
+
+transition: border-bottom 0.3s ease-in-out 0s;
+-------------------------------
+过度效果
+http://www.runoob.com/cssref/css3-pr-animation.html
+
+.aaa{opacity:1;
+/**规定需要绑定到选择器的 keyframe 名称**/
+animation:index-left-ul-img 1s infinite;
+-webkit-animation:index-left-ul-img 1s infinite; /* Safari 和 Chrome */
+/**规定完成动画所花费的时间，以秒或毫秒计**/
+animation-duration:1.4s;
+-webkit-animation-duration:1.4s; /* Safari 和 Chrome */
+}
+
+@keyframes index-left-ul-img {
+      0% {
+         opacity:0.2;
+      }
+      50% {
+         opacity:1;
+      }
+      100% {
+         opacity:0.2;
+      }
+} 
+-------------------------------
+图片放大
+transform: scale(1.1, 1.1);
+-ms-transform: scale(1.1, 1.1);
+-webkit-transform: scale(1.1, 1.1);
+-o-transform: scale(1.1, 1.1);
+-moz-transform: scale(1.1, 1.1);
+-------------------------------
+选中文字背景色
+::selection {
+    background:#d3d3d3;
+    color:#555;
+}
+
+::-moz-selection {
+    background:#d3d3d3;
+    color:#555;
+}
+
+::-webkit-selection {
+    background:#d3d3d3;
+    color:#555;
+}
+--------------------------------
+文字超出不显示   文字截断 文字超出隐藏
+a{
+ width:240px;/*设置最多显示宽度*/
+ display:block;/*把A变成快级元素*/
+ overflow: hidden;/*注意不要写在最后了*/     
+ white-space: nowrap;/*不自动换行*/
+ -o-text-overflow: ellipsis;/*超出显示省略号*/
+ text-overflow: ellipsis;/*超出显示省略号*/
+}
+width:100%;display:block;overflow: hidden;white-space: nowrap;-o-text-overflow: ellipsis;text-overflow: ellipsis;
+--------------------------------
+设置div阴影
+    box-shadow:0px 0 0px #f0eff0, /*左边阴影*/  
+    4px 0 4px #f0eff0, /*右边阴影*/  
+    0 0px 0px #f0eff0, /*顶部阴影*/  
+    0 4px 4px #f0eff0; /*底边阴影*/  
+
+
+
+-webkit-box-shadow: 4px 4px 4px #e8e6e6;  
+  -moz-box-shadow: 4px 4px 4px #e8e6e6;  
+  box-shadow: 4px 4px 4px #e8e6e6;  
+
+--------------------------------
+手机平板PC自适应css
+ @media screen and (min-width: 320px) and (max-width: 480px){
+在这里写小屏幕设备的样式
+}
+@media only screen and (min-width: 321px) and (max-width: 1024px){
+这里写宽度大于321px小于1024px的样式(一般是平板电脑)
+}
+@media only screen and (min-width: 1029px){
+这里写pc客户端的样式
+}
+-------------------------------
+背景色透明
+background-color:transparent;
+--------------
+背景位置
+background-position:←px ↑px;
+--------------------------------
+文字阴影效果
+text-shadow:5px 5px 2px #ffffff;
+前面两个是阴影位置，后面一个是模糊面积。
+--------------------------------
+下拉框
+<select name="selectAge" class="inp1">
+	<option value ="女">女</option>
+	<option value ="男">男</option>
+</select>
+--------------------------------
+下拉居中
+  text-align: center;
+  text-align-last: center;
+--------------------------------
+多行文本输入框
+<textarea>～</textarea>
+禁止缩放
+resize: none;
+--------------------------------
+禁止鼠标手势
+cursor: not-allowed;
+--------------------------------
+清除下拉框默认样式 美化
+  /*很关键：将默认的select选择框样式清除*/
+  appearance:none;
+  -moz-appearance:none;
+  -webkit-appearance:none;
+  /*在选择框的最右侧中间显示小箭头图片*/
+  background:url(../images/select-icon2.png) no-repeat left center;
+  background-size:0.8rem 1rem;
+  /*为下拉小箭头留出一点位置，避免被文字覆盖*/
+  padding-right:0.8rem; border-right:1px solid #1290e8; padding-left:0.3rem;
+--------------------------------
+透明
+filter: Alpha(Opacity=10); //IE浏览器
+-moz-opacity:0.5; //火狐浏览器
+opacity:0.5; //其他浏览器
+-------------------------------
+让a链接失效，a刷新属性
+<a href="javascript:void(0);"></a>
+--------------------------------
+
+-------------------------------
+改变inpute内placeholder的颜色 文本框美化
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {color: #fff;}
+input:-moz-placeholder, textarea:-moz-placeholder {color:#fff;}
+input::-moz-placeholder, textarea::-moz-placeholder {color:#fff;}
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {color:#fff;}
+
+input::-webkit-input-placeholder { /* WebKit browsers */color:#fff;}
+input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */color:#fff;}
+input::-moz-placeholder { /* Mozilla Firefox 19+ */color:#fff;}
+input:-ms-input-placeholder { /* Internet Explorer 10+ */color:#fff;}
+-------------------------------
+链接变色
+a:link，定义正常链接的样式； 
+a:visited，定义已访问过链接的样式； 
+a:hover，定义鼠标悬浮在链接上时的样式； 
+a:active，定义鼠标点击链接时的样式。 
+inpute:focus{文本框点击时的变化}
+font（临时用用的）
+------------------------------
+快速切换手机模式
+火狐---ctrl+shift+m
+谷歌---ctrl+shift+c
+------------------------------
+织梦后台  模板路径
+templets/default/
+另外一种的后台路径
+------------------------------
+layer手机端插件使用地方
+E:\项目\2018-01\宇霆\手机端\在线招聘.html
+------------------------------
+编辑器安装插件方法
+1.ctrl+shift+p
+2.输入"Package Control:Install Package"
+3.输入需要查找的插件名
+-----------------------------
+文字上下居中
+.center-table {
+    display: table;
+    height: 140px;
+    border: 2px dashed #f69c55;
+}
+.v-cell {
+    display: table-cell;
+    vertical-align: middle;
+}
+或者这样
+.parent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+-----------------------------
+引入字体
+https://www.fontke.com/tool/convfont/
+
+@font-face {
+  font-family: 'pinghei';
+  src: url('../font/pinghei.eot');
+  src:
+    url('../font/pinghei.eot?#iefix') format('embedded-opentype'),
+    url('../font/pinghei.woff') format('woff'),
+    url('../font/pinghei.ttf') format('truetype'),
+    url('../font/pinghei.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*使用指定字体*/
+.test {
+    font-family: 'pinghei';
+}
+----------------------------
+下拉新建页面打开
+		<select onchange="window.open(this.options[this.selectedIndex].value)">
+			<option value="">友情链接</option>
+			<option value="https://www.baidu.com/">度娘</option>
+			<option value="https://www.google.com/">Google</option>
+		</select>
+----------------------------
+手机端文字多行截断
+	    font-size:28rpx;
+	    color:#000000;
+	    line-height: 40rpx;
+	    display: -webkit-box;
+	    word-break: break-all;
+	    -webkit-box-orient: vertical;
+	    -webkit-line-clamp:2;
+	    overflow: hidden;
+	    text-overflow:ellipsis;
+----------------------------
+框选文字底色变色--默认底色
+::-moz-selection{background:#00ffea; color:#fff;}
+::selection {background:#00ffea; color:#fff;}
+----------------------------
+禁止按钮能戳-禁止点击
+ onfocus=this.blur()
+----------------------------
+自适应写法
+@media (min-width:768px){
+.one{ width:100%; }
+.two{ display:none; }
+}
+@media (max-width:768px){
+.one{ display:none; }
+.two{ width:100%; }
+}
+----------------------------
+相对屏幕整体居中，相对屏幕居中
+left: 50%;
+top: 50%;
+-webkit-transform: translate(-50%,-50%);
+-ms-transform: translate(-50%,-50%);
+transform: translate(-50%,-50%);
+----------------------------
+文字上下居中
+.merchants-scope-list li p{width: 100%;height: 100%;display: table;}
+.merchants-scope-list li span{display: table-cell;vertical-align: middle;}
+----------------------------
+基数偶数
+#Ulist li:nth-of-type(odd){ margin-left: 20px;}奇数行   
+#Ulist li:nth-of-type(even){margin-left: 10px;}偶数行
+----------------------------
+文字外发光
+text-shadow:0 0 0.1rem #ffd017,-0 -0 0.1rem #ffd017;
+----------------------------
+css美化滚动条  滚动条美化
+.test-1::-webkit-scrollbar {/*滚动条整体样式*/
+        width: 10px;     /*高宽分别对应横竖滚动条的尺寸*/
+        height: 1px;
+    }
+.test-1::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+        border-radius: 10px;
+         -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+        background: #535353;
+    }
+.test-1::-webkit-scrollbar-track {/*滚动条里面轨道*/
+        -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+        border-radius: 10px;
+        background: #EDEDED;
+    }
+-----------------------------
+自适应写法
+@media screen and (max-width: 1200px) {
+  .ccav{background: #ccc}
+}
+-----------------------------
+图片居中 图片不变形居中
+.panorama li img{
+display: block;
+width:100%;
+height: 6.917rem;
+object-fit: cover;
+}
+-----------------------------
+表格不被内容撑开
+table{table-layout:fixed;word-break:break-all;}
+-----------------------------
+删除线
+<del>￥39</del>
+-----------------------------
+招商银行
+--
+跳转出去不能返回
+https://cmbt.cn/mp1？popup=true
+-----------------------------
+双背景-多背景
+background:url(top.jpg) center top no-repeat,
+url(bottom.jpg) center bottom no-repeat;
+----------------------------
+button 无法设置背景色，type="button"
+-webkit-appearance:none;
+----------------------------
+文本框禁止输入
+<input type="text" name="s_birth" placeholder="请选择出生日期" readonly="true" unselectable="on" onfocus="this.blur()">

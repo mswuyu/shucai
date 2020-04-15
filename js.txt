@@ -1,0 +1,847 @@
+/*是否能自动*/
+auto: true,//自动
+auto: false,//不自动
+/*显示-隐藏*/
+.show();   //显示
+.hide();   //隐藏
+/**单击关闭**/
+想变成移动触发的话就把
+$(".sype").mouseover(function(){
+
+/******手机端列表内有点击事件的用下面这种方式，否则当程序做点击加载更多时会出现列表内所写的js失效的问题*******/
+jQuery 事件 - delegate() 方法
+$("div").delegate("button","click",function(){
+  $("p").slideToggle();
+});
+/**********这里换掉/**********/
+
+手机端用触摸事件不能用点击事件
+
+$(document).ready(function(){
+   $(".aaa").touchstart(function(){ 
+    $(".bbbl").css("display","block");
+ }); 	   
+});
+/**********单击消失**********/
+/*单击这个div默认属性为消失*/
+$(document).ready(function(){
+   $(".aaa").click(function(){ 
+    $(".bbbl").css("display","block");
+    /*$(".bbbl").css("height","auto").slideToggle();高度缓慢*/
+ 	}); 	   
+});
+/*缓慢*/
+$(document).ready(function(){
+   $(".aaa").click(function(){ 
+    $(".bbbl").fadeIn();//缓慢出现
+    $(".bbb2").fadeOut();//缓慢消失
+ 	});
+});
+/**动画**/
+$(".btn1").click(function(){
+  $("#box").animate({height:"300px"});
+});
+/*******当移动到aaa内的ul内的li时触发li加个名为bbb的css,其他的消失******详见龙腾首页小轮播****/
+$(function(){
+    $("#aaa ul > li").mouseover(function(){
+        $(this).addClass("bbb").siblings().removeClass("bbb");
+})
+})
+/*******点击判断其他是否存在class*******/
+$(".ul_k .li").click(function(){
+    if ($(this).hasClass("on")) {
+        console.log("有");
+        $(this).removeClass("on");
+    } else {
+        console.log("没有");
+        $(this).addClass("on").siblings().removeClass("on");
+    }
+})
+/**********这里是子元素加css***********/
+<script>
+      $(document).ready(function(){
+   $(".aa").mouseover(function(){
+    $(this).children(".bb").addClass("cc")
+
+   $(".aa").mouseout(function(){
+    	$(this).children(".bb").removeClass("cc")  
+}); 
+ 	}); 	   
+});
+
+</script>
+/*判断div高度显示展开更多*/
+$(document).ready(function(){
+if($(".div").height() < 297){        //当.div高度小于297时
+  $(".zk").css("display","none");    //zk隐藏
+    //$(".div").css("height","297"); //做测试用的
+}else if($(".div").height() > 297){  //当.div高度大于297时
+  $(".div").css("height","300");     //.div高度固定为300
+}
+/*****滑动到底部******/
+window.onscroll=function(){
+    var sHeight=document.documentElement.scrollTop||document.body.scrollTop;//滚动高度
+    var wHeight=document.documentElement.clientHeight;//window 
+    var dHeight=document.documentElement.offsetHeight;//整个文档高度
+    if(dHeight-(sHeight+wHeight)<10)
+    {
+        $(".foot").css("bottom","0");
+    }
+    else{
+        $(".foot").css("bottom","-1.8rem");
+    }
+};
+/************验证码**************/
+<input value="发送验证码" class="lm-dl-sub" type="button" onclick="settime(this)">
+<script>
+//F发送验证码
+var countdown=60; 
+function settime(obj) { 
+    if (countdown == 0) { 
+        obj.removeAttribute("disabled");    
+        obj.value="重新获取验证码"; 
+		obj.style.background="#2cc17b"; 
+        countdown = 60; 
+        return;
+    } else { 
+        obj.setAttribute("disabled", true); 
+        obj.value="重新发送(" + countdown + ")"; 
+		obj.style.background="#E1E1E1"; 
+        countdown--; 
+    } 
+setTimeout(function() { 
+    settime(obj) }
+    ,1000) 
+}
+</script>
+/****文本框获取文本框焦点*****/
+$(".xxx").focus();
+/****获取焦点与失去焦点****/
+$("input").focus(); 或$("input").focus(function(){这里是获取焦点时的事件}) 
+$("input").blur(); 或$("input").blur(function(){这里是失去焦点时的事件}) 
+/*****点击切换文字-收藏******/
+<input type="button" class="class1" value="收藏" id="a1">
+
+window.onload = function(){
+  var obj = document.getElementById("a1");
+  obj.onclick = function(){
+    obj.className = (obj.className == "class1"?"class2":"class1");
+    obj.value = (obj.value == "收起"?"展开":"收起");
+  }
+}
+/******按回车提交表单*******/
+$(document).keyup(function(event){  
+  if(event.keyCode ==13){  
+    $("#btn").trigger("click");  
+  }  
+}); 
+/*****选中第几个*****/
+<script type="text/javascript">
+$(".news-ul li").eq(4).addClass("li");
+$(".news-ul li").eq(9).addClass("li");
+$(".news-ul li").eq(14).addClass("li");
+$(".news-ul li").eq(19).addClass("li");
+</script>
+/********截取中间*********/
+    $('.donation_tab .a1').each(function(index, el) {
+		var str = $(el).text();
+		var reg = /^(\d{4})\d+(\d{4})$/;
+		str = str.replace(reg, "$1********$2");
+		console.log(str);
+		$(el).text(str+index)
+    });
+保留前面4位和后面四位将中间的替换成*******
+/******获取屏幕高度*****/
+$(document).ready(function(){
+   var windowHeight = window.innerHeight;
+   var aaaa = windowHeight+'px';
+   $('.section').css('height', aaaa);
+})
+/****获取屏幕宽度******/
+var kuan=$(window).width()/2;
+/*****手机图片放大滚动加载无效，在滚动加载后面加这个方法  详见乐享健身  相册图片放大滚动加载没用******/
+afterFun:function (){
+   // execute above function
+   initPhotoSwipeFromDOM('.my-simple-gallery');
+}
+/******密码小眼睛******/
+<input id="password" type="password" placeholder="请输入身份证号">
+<img id="eye" data-v="noeye" src="/Public/images/noeye.png">
+
+<script>
+  $("#eye").click(function(){
+    var v =$(this).data('v');
+    if(v=='noeye'){
+      $(this).data('v','eye');
+      $(this).attr('src','/Public/images/eye.png');
+      $("#password").attr('type','text');
+    }
+    if(v=='eye'){
+      $(this).data('v','noeye');
+      $(this).attr('src','/Public/images/noeye.png');
+      $("#password").attr('type','password');
+    }
+  })
+</script>
+/*************************************选中前三******************************************/
+$(function() {
+    $(".ul").find("li:lt(3)").children("a").css("background","#e92525");
+});
+选中.ul>li的前三个里面的a加背景色
+/**************************************高度等于宽度**************************************/
+$(window).load(function() {
+$(".aa").height($(".aa").width());
+});
+
+$(window).load(function() {
+    $(".1a").height($(".1b").height());
+});
+/********************移入移除添加删除js***********************/
+$(".evo").mouseover(function(){
+    $(this).addClass("red");
+})
+$(".evo").mouseout(function(){
+    $(this).removeClass("red");
+})
+/**************加入购物车动画效果************/
+/*点击aaa复制abab的样式移动到bbb*/
+$(function(){
+	$('.aaa').click(function(){
+		var flyElm = $('.abab').clone().css('opacity','0.7');
+		flyElm.css({
+			'z-index': 9000,
+			'display': 'block',
+			'position': 'absolute',
+			'top': $('.abab').offset().top +'px',
+			'left': $('.abab').offset().left +'px',
+			'width': $('.abab').width() +'px',
+			'height': $('.abab').height() +'px'
+		});
+		$('body').append(flyElm);
+		flyElm.animate({
+			top:$('.bbb').offset().top,
+			left:$('.bbb').offset().left,
+			width:0,
+			height:0,
+		},'slow');
+	});
+});
+/***************点赞********************/
+<script type="text/javascript">
+ <!--
+  $(document).ready(function(e) {
+    $('a.zhan').click(function(){
+  var left = parseInt($(this).offset().left)+10, top =  parseInt($(this).offset().top)-10, obj=$(this);
+  $(this).append('<div id="zhan"><b>+1<\/b></\div>');
+  $('#zhan').css({'position':'absolute','z-index':'1', 'color':'#C30','left':left+'px','top':top+'px'}).animate({top:top-10,left:left+10},'slow',function(){
+   $(this).fadeIn('fast').remove();
+   var Num = parseInt(obj.find('span').text());
+       Num++;
+    obj.find('span').text(Num);
+  });
+   
+   
+  return false;
+ });
+ });
+ //-->
+</script>
+
+<a class="zhan" href="#">赞(<span>0</span>)</a>
+/*********定时跳转********/
+过0.1秒跳转到优酷
+<meta http-equiv="refresh" content="0.1;url=http://www.youku.com/">
+/*******定时跳转,带时间********/
+<span id="dd">6</span>
+<!--倒计时-->
+<script type="text/javascript">
+function run(){
+    var s = document.getElementById("dd");
+    if(s.innerHTML == 0){
+        window.location.href='https://www.baidu.com/';
+        return false;
+    }
+    s.innerHTML = s.innerHTML * 1 - 1;
+}
+window.setInterval("run();", 1000);
+</script>
+/*****定时******/
+setTimeout(function(){//定时器 
+ $(".aaa").fadeOut();//缓慢消失
+},
+3000);//设置三千毫秒即3秒
+setTimeout("codefans()",2000);//2秒，可以改动
+/*选中元素的第一个和最后一个*/
+$(document).ready(function(){
+  $(".foot2z h2 a:first-child").css("border-left","0px");
+  $(".foot2z h2 a:last-child").css("border-right","0px");
+});
+/*************点击添加css，在点击取消  两次****************/
+$(".aaa").click(function(){
+  $(this).toggleClass("bbb");
+});
+/***延时加载***/
+setTimeout(function () {$(".inquiry-pops").css("display","block");}, 3000);
+/****当移除本页面页面标题切换****/
+document.addEventListener("visibilitychange",function(){document.title=document.hidden?"出BUG了，快看！":"小白的魔术工坊"})
+/*************************新建窗口打开，适用于乐语，弹窗咨询***********************/
+<script language="javascript">
+function openwin() {
+var l=(screen.availWidth-740)/2;
+var t=(screen.availHeight-650)/2;        
+window.open('http://www.baidu.com/','newWin','width=740,height=650,top='+t+',left='+l+',toolbar=no,menubar=no,location=no,status=yes');
+}
+/******新版*******/
+function openwin(url,iWidth,iHeight)
+ {
+  var url = "http://www.baidu.com/";        //转向网页的地址;
+  var iWidth = 740;                         //弹出窗口的宽度;
+  var iHeight = 650;                        //弹出窗口的高度;
+  //window.screen.height获得屏幕的高，window.screen.width获得屏幕的宽
+  var iTop = (window.screen.height-30-iHeight)/2;       //获得窗口的垂直位置;
+  var iLeft = (window.screen.width-10-iWidth)/2;        //获得窗口的水平位置;
+  window.open(url,name,'height='+iHeight+',,innerHeight='+iHeight+',width='+iWidth+',innerWidth='+iWidth+',top='+iTop+',left='+iLeft+',toolbar=no,menubar=no,scrollbars=auto,resizeable=no,location=no,status=no');
+ }
+</script>
+<a href="javascript:void(0);" onclick="openwin()">新建窗口打开</a>
+/*****************************************************************/
+选中ul li div父及元素内的a显示
+$(".ul li div").click(function(){
+    $(this).parents(".ul li").children(".a").css("display","block");
+});
+/***************页面内所有A新建窗口打开*****************/
+$('a').click(function(){
+   var val = $(this).attr('target','_blank');
+})
+/*******************************倒计时*****************************/
+   <span id="btn"></span>
+    <script>
+		var h = "00:";
+        var x = 30,
+            interval;
+        window.onload = function() {
+            var d = new Date("1111/1/1,0:" + x + ":0");
+            interval = setInterval(function() {
+                var m = d.getMinutes();
+                var s = d.getSeconds();
+                m = m < 10 ? "0" + m : m;
+                s = s < 10 ? "0" + s : s;
+                btn.innerHTML =h+ m + ":" + s;
+                if (m == 0 && s == 0) {
+                    clearInterval(interval);
+                    return;
+                }
+                d.setSeconds(s - 1);
+            }, 1000);
+        }
+    </script>
+/*************还剩几天*****************/
+<span id="t_d">00 天</span>
+<span id="t_h">00 时</span>
+<span id="t_m">00 分</span>
+<span id="t_s">00 秒</span>
+<script type="text/javascript">
+function getRTime(){
+    var EndTime= new Date("2020/01/01 00:00:00"); //截止时间
+    var NowTime = new Date();
+    var t =EndTime.getTime() - NowTime.getTime();
+    var d=Math.floor(t/1000/60/60/24);
+    var h=Math.floor(t/1000/60/60%24);
+    var m=Math.floor(t/1000/60%60);
+    var s=Math.floor(t/1000%60);
+
+    document.getElementById("t_d").innerHTML = d + " 天";
+    document.getElementById("t_h").innerHTML = h + " 时";
+    document.getElementById("t_m").innerHTML = m + " 分";
+    document.getElementById("t_s").innerHTML = s + " 秒";
+}
+setInterval(getRTime,1000);
+</script>
+/******************滑动悬浮导航*********************/
+$(document).ready(function(){
+	var headHeight=552; //变量
+	var nav=$(".ny-nav-k");////导航div
+	$(window).scroll(function(){
+		if($(this).scrollTop()>headHeight){//当高度大于上面的变量时触发什么效果
+			nav.addClass("ny-nav-on");
+			$(".ny-nav-kb").css("display","block")
+		}
+		else{
+			nav.removeClass("ny-nav-on");
+			$(".ny-nav-kb").css("display","none")
+		}
+	})
+});
+/*************选中每个ul中的li分别执行当前js**************/
+  $(function() {                        
+    $(".ul li").each(function(){
+      var phone = $(this).find(".tel").text();
+      var mphone = phone.substr(0, 3) + '****' + phone.substr(7,10);
+      // var tt1 =$(this).find(".time").text();
+      $(this).find(".tel").text(mphone);
+      // $(this).find(".time").text(tt1);
+      // var tt2 =$(this).find(".time2").text();
+      // $(this).find(".time2").text(tt2);
+    });
+  });
+/**********微信音乐不播放*****************/
+*html*
+
+     <audio id="bg-audio" src="bg.mp3" loop="loop" autoplay="autoplay"></audio>
+
+*js*
+
+    var bgAudio = document.getElementById('bg-audio');
+    bgAudio.load();
+    bgAudio.play();
+    // 兼容在微信里自动播放
+    document.addEventListener("WeixinJSBridgeReady", function () {
+        bgAudio.load();
+        bgAudio.play();
+    }, false);
+/**********第二种方法***********/
+<audio src="__INDEXSTATIC__images/bj.mp3" id="audioPlay"></audio>
+<script>
+　　wx.ready(function(){
+　　　　var audio = document.getElementById("audioPlay");
+　　　　audio.play()
+　　})
+</script>
+
+/***********获取子元素宽度之和赋予给父级元素************/
+var w = 0
+$("#a1 .aa").each(function(){
+w += parseInt($(this).width());//获取宽度。并累加
+})
+
+alert(w)
+$("#a1").width(w)
+
+innerWidth() 方法返回元素的宽度（包括内边距）。
+outerWidth() 方法返回元素的宽度（包括内边距和边框）。
+outerWidth(true) 方法返回元素的宽度（包括内边距、边框和外边距）
+/********基数偶数********/
+$(".honor_ul li:even").addClass("fl");(偶数)
+$(".honor_ul li:odd").addClass("fl");（基数）
+/******点击第一次与第二次******/
+$(document).ready(function (){
+ $('#togg').toggle(
+  function (){
+   $(this).addClass('cls')  
+},
+  function (){
+   $(this).removeClass('cls')   
+}
+ );
+});
+/********底部滑动导航*********/
+//滑动处理 
+    var startX, startY; 
+    document.addEventListener('touchstart',function (ev) { 
+      startX = ev.touches[0].pageX; 
+      startY = ev.touches[0].pageY; 
+    }, false); 
+    document.addEventListener('touchend',function (ev) { 
+      var endX, endY; 
+      endX = ev.changedTouches[0].pageX; 
+      endY = ev.changedTouches[0].pageY; 
+      var direction = GetSlideDirection(startX, startY, endX, endY); 
+      switch(direction) { 
+        case 0: 
+            alert("无操作"); 
+          break; 
+        case 1: 
+          // 向上 
+          alert("up"); 
+          break; 
+        case 2: 
+          // 向下 
+          alert("down"); 
+          break; 
+ 
+        default: 
+      } 
+    }, false); 
+function GetSlideDirection(startX, startY, endX, endY) { 
+      var dy = startY - endY; 
+      //var dx = endX - startX; 
+      var result = 0; 
+      if(dy>0) {//向上滑动 
+        result=1; 
+      }else if(dy<0){//向下滑动 
+        result=2; 
+      } 
+      else 
+      { 
+        result=0; 
+      } 
+      return result; 
+    } 
+/******弹窗视频js*********/
+$(function(){
+    var video = $('video.wp-video-shortcode');
+    video.hover(function(){
+        video[0].play() // play() 和 pause() 是HTML5中video自带的API函数，哈哈，方便吧？
+    },function(){
+        video[0].pause()
+    });
+});
+/*******防止多次触发********/
+$('.aaa').hover(function() {
+  var athis = $(this);
+  delay = setTimeout(function(){
+    athis.children('.logo_r_ul').fadeIn('300');
+	$(".bbb").addClass("on")
+  },300)
+}, function() {
+  clearTimeout(delay);
+  var athis = $(this);
+  athis.children('.logo_r_ul').fadeOut('300');
+  $(".bbb").removeClass('on')
+});
+/******阻止ios浏览器橡皮筋效果*******/
+$(document).ready(function(){  
+    function stopScrolling( touchEvent ) {   
+        touchEvent.preventDefault();   
+    }  
+    document.addEventListener( 'touchstart' , stopScrolling , false );  
+    document.addEventListener( 'touchmove' , stopScrolling , false );  
+});
+/*****判断是否有特定文字并删除当前文字的父级元素********/
+// 内页美容作品隐藏
+$(".nav-wrap .nav li a").each(function(){
+  if($(this).html().indexOf("美容作品")!=-1){
+  $(this).parents().remove();
+}
+})
+/*****判断文本框是否为空，监测文本框输入事件******/
+
+$('input').bind('input propertychange', function(){
+	if($(this).val()){
+		console.log("hhhhhhhh");
+	}else{
+		console.log("xxxxxxxx");
+	}
+})
+/******判断是否有class******/
+.hasClass("on")
+/******控制空链接不跳转******/
+    $("a").click(function(){
+        var ssThis = $(this).attr("href");
+        console.log(ssThis);
+        if((ssThis=="")||(ssThis==undefined)||(ssThis=="#")){
+            return false;
+        }
+    })
+/*****弹出是否******/
+	if(confirm("确定删除吗")){
+		alert("你抛弃了我")
+	}else{
+		alert("要死一起死")
+	}
+/*****父级元素*****/
+.parent()        //上一个标签
+.closest('.jz')  //父级元素指定名称
+/****子元素****/
+.children()
+.find(".jz")
+/*****js封装******/
+// 第一种简单的函数封装
+function btn(){
+    $("button").click(function(){
+        console.log("hello")
+    })
+};
+btn()  //调用，写在函数的前后都行
+// 第二种方式封装
+var btn = function(){
+    $("button").click(function(){
+        console.log("第二种封装")
+    })
+}
+btn()  //调用，但是必须写在函数声明的后面
+/*****强制转换数字类型*******/
+var num = parseInt(/***这里面放需要转换的***/);
+/*****获取元素高度，获取元素宽度******/
+.height();            //不带padding，margin
+.innerHeight();       //包括padding，但是不包括border
+.outerHeight();      //计算中总是包含padding-top ,padding-bottom 和 border-top，border-bottom ；如果includeMargin参数是true，那么margin (top 和 bottom)也会被包含。
+/*****获取屏幕高度减去底部高度*****/
+// 获取屏幕高度
+$(document).ready(function(){
+   var windowHeight = window.innerHeight;
+   var aaa = parseInt(windowHeight+'px');
+   var bbb = parseInt($(".landing_foot").innerHeight());
+   var ccc = aaa-bbb;
+   console.log(ccc);
+   $('.frame').css('min-height', ccc);
+})
+/*****动态改变  var 传入******/
+var day = 2;
+$(".aaa li:lt(" + day + ")").addClass("on");
+/****点击事件方法****/
+<script type="text/javascript">
+function disp_alert()
+{
+alert("我是一个消息框！")
+}
+</script>
+<input type="button" onclick="disp_alert()" value="显示消息框" />
+/****下拉 判断其他是否存在class****/
+$(".index-course-filter .li1").click(function(){
+    if ($(this).hasClass('course-filter-xz')) {
+        $(this).removeClass("course-filter-xz");
+        console.log("不存在")
+    } else {
+        $(this).addClass("course-filter-xz").siblings().removeClass("course-filter-xz");
+        console.log("存在")
+    }
+})
+/****当前元素之后 去除点击事件***/
+$('.disableCss').removeAttr('onclick');//去掉标签中的onclick事件
+/***表单验证***/
+<input name="i_name" type="text" placeholder="请输入姓名">
+<input name="i_tel" type="tel" placeholder="联系电话">
+<button class="sign_up_tj" onclick="submit()"></button>
+
+    function submit()
+    {
+      var i_name = $("input[name = 'i_name']").val();
+      var i_tel = $("input[name = 'i_tel']").val();
+      if(i_name.length === 0)
+      {
+          layer.open({
+            content: '请输入正确姓名!'
+            ,skin: 'msg'
+            ,time: 2 //2秒后自动关闭
+          });
+          $(".sign_up_tab .li1 input").focus();
+          return false;
+      }
+      if(i_tel.length !== 11)
+      {
+          layer.open({
+            content: '请输入正确电话号码!'
+            ,skin: 'msg'
+            ,time: 2 //2秒后自动关闭
+          });
+          $(".sign_up_tab .li2 input").focus();
+          return false;
+      }
+      if($("#w1").text()==="参赛时间"){
+          layer.open({
+            content: '请选择参赛时间!'
+            ,skin: 'msg'
+            ,time: 2 //2秒后自动关闭
+          });
+          return false;
+      }
+      if($("#w2").text()==="参赛地点"){
+          layer.open({
+            content: '请选择参赛地点!'
+            ,skin: 'msg'
+            ,time: 2 //2秒后自动关闭
+          });
+          return false;
+      }
+      else{
+        $(".submit,.map_pop_bj").fadeIn();
+        // 获取参赛地点
+        var str = $("#w2").html();
+        var arr1 = str.split("：");
+        console.log(arr1[2]);
+        // 获取参赛时间
+        var tel = $("#w1").text();
+        $(".submit .li2").text(tel);
+        $(".submit .li3").text(arr1[2]);
+    }
+      // var api_url = "port/post/search";
+      // var param = {'school':i_name,'phone':i_tel};
+      // jQuery.post
+      // (
+      //     api_url,
+      //     param
+      // )
+      // .done(function (data) {
+      //     var data = JSON.parse(data);
+      //     if(data.code == 200)
+      //     {
+      //       $(".submit,.map_pop_bj").fadeIn();
+      //       // 获取参赛地点
+      //       var str = $("#w2").html();
+      //       var arr1 = str.split("：");
+      //       console.log(arr1[2]);
+      //       // 获取参赛时间
+      //       var tel = $("#w1").text();
+      //       $(".submit .li2").text(tel);
+      //       $(".submit .li3").text(arr1[2]);
+      //     }else
+      //     {
+      //       layer.open({
+      //         content: '提交失败，请您重新提交！'
+      //         ,skin: 'msg'
+      //         ,time: 2 //2秒后自动关闭
+      //       });
+      //     }
+      // })
+      // .fail(function (data) {
+      //   layer.open({
+      //     content: '提交失败，请您重新提交！'
+      //     ,skin: 'msg'
+      //     ,time: 2 //2秒后自动关闭
+      //   });
+      // });
+    };
+=======================================
+获取特定符号之后的字符串
+var str = "广东-深圳;U8976hg";
+var arr = str.split(";");
+console.log(arr[0],"\n",arr[1]);
+=======================================
+携参数跳转
+    function aaa()
+    {
+        var aa = $("#i_share_img").attr("src");
+        window.location.href="{:url('share')}?src="+aa
+        // href="{:url('share')}"
+        console.log(aa);
+    }
+=======================================
+js填充下拉
+<select id="nation"></select>
+
+<script>
+// 城市
+var nations = ["南昌市", "赣州市", "上饶市", "宜春市", "景德镇市", "新余市", "九江市", "萍乡市", "抚州市", "鹰潭市", "吉安市", "丰城市", "樟树市", "德兴市", "瑞金市", "井冈山市", "高安市", "乐平市", "南康市", "贵溪市", "瑞昌市", "东乡县", "广丰县", "信州区", "三清山"];
+
+var option = "";
+for(var i = 0; i <
+	nations.length; i++) {
+	option += '<option value="' + (i + 1) + '">' + nations[i] + '</option>';
+}
+$(option).appendTo("#nation");
+</script>
+=======================================
+获得当前时间后几天
+    function getAnyDay(symbol, n) {
+        var nowDate = new Date();
+        nowDate = nowDate.setDate(nowDate.getDate() + n);
+        nowDate = new Date(nowDate);
+
+        var m = nowDate.getMonth() + 1,
+            d = nowDate.getDate();
+        m = m < 10 ? '0' + m : m;
+        d = d < 10 ? '0' + d : d;
+        return m + "" + d;
+    }
+    console.log(getAnyDay('', 8));
+		var str=getAnyDay('', 8);
+		var str2="";
+		for(i=0;i<str.length;i++){
+			str2+="<span>"+str.substr(i,1)+"</span>";
+		}
+		$(".time-box .time").html(str2)
+=======================================
+点浏览器返回触发事件
+$(function() {
+	pushHistory();
+	window.addEventListener("popstate", function(e) {
+		$(".wei_bj,.wei_k").fadeIn();//缓慢出现
+	}, false);
+
+	function pushHistory() {
+		var state = {
+			title: "title",
+			url: "#"
+		};
+		window.history.pushState(state, "title", "#")
+	}
+	javascript: window.history.forward(1)
+});
+======================================
+算li的总和给ul
+
+$(function(){
+    //定义一个变量用来记录li宽度的累加值
+    var sumWidth=0;
+    //假设$("li")返回的就是这3个li
+    $(".surr_ul li").each(function(){
+        sumWidth += $(this).width();
+    });
+    $(".surr_ul").width(sumWidth+3);
+});
+======================================
+判断是否是某个域名
+            var k_host = window.location.host;
+            if (k_host != "wap.xuehuiwang.com.cn") {
+                setTimeout("window.location.replace('http://wap.xuehuiwang.com.cn/newpower/baidu/search/xueli/6')", 10000);
+            };
+======================================
+给每个数字包裹一个标签
+var arr = $(".index_time").text();
+var result = '';
+for(var i = 0; i < arr.length ; i++ ) {
+    var temp = '<font>'+arr[i]+'</font>';
+    result = result + temp;
+}
+$('.index_time').html(result);
+======================================
+判断标签是否为空
+$(document).ready(function() {
+    $(".index_time font").each(function() {
+        var values_stu_evaluate = ($(this).text());
+        if(/^\s*?$/.test(values_stu_evaluate)) {
+            //如果是空的
+            $(this).css("display","none");
+        } else {
+        }
+    });
+});
+======================================
+年月日
+function updateTime() {
+	  var date = new Date();
+	  this.year = date.getFullYear();
+	  this.month = date.getMonth() + 1;
+	  this.date = date.getDate();
+	  this.day = new Array("星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六")[date.getDay()];
+	  this.hour = date.getHours() < 10 ? "0" + date.getHours() : date.getHours();
+	  this.minute = date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes();
+	  this.second = date.getSeconds() < 10 ? "0" + date.getSeconds() : date.getSeconds();
+	  var currentTime =  this.year + "." + this.month + "." + this.date + "," + this.day+ ","+this.hour + ":" + this.minute + ":" + this.second  ;
+	  $("#date").html(currentTime);
+}
+年月日方法2
+setInterval("webjx.innerHTML=new Date().toLocaleString()+' 星期'+'日一二三四五六'.charAt(new Date().getDay());",0);
+2020/4/15 上午10:11:22 星期三
+======================================
+判断是不是微信浏览器
+if(isWeiXin() == false){
+	console.log("不是微信浏览器");
+}else{
+	console.log("是微信浏览器");
+}
+
+function isWeiXin(){
+    var ua = window.navigator.userAgent.toLowerCase();
+    if(ua.match(/MicroMessenger/i) == 'micromessenger'){
+        return true;
+    }else{
+        return false;
+    }
+}
+======================================
+失去焦点获得身份证中的年月日    截取 截取几位 获得中间
+ $("#idCard").blur(function(){
+	var str = $(this).val();
+	if (str == "") {
+		console.log("请输入身份证号码");
+	} else {
+		var reg1 = str.substring(6,10);
+		var reg2 = str.substring(10,12);
+		var reg3 = str.substring(12,14);
+		var reg4 = reg1+"年"+ reg2 + "月" + reg3 + "日";
+		console.log(reg4);
+		$("#dateSelectorTwo").val(reg4)
+	}
+ })
